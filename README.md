@@ -84,3 +84,13 @@ The content of the file is less important than checking that Vite is ready to go
 From the teminal, start the development server: ```npm run dev```. Once the server is started, enter 'o' to open the browser. An new browser tab should open with a blank page.
 
 In ```index.html```, add some text (e.g., Hi.) to the body and save. The text should appear on the web page.
+
+### Setup GitHub Pages
+
+From the repository page on github.com, open the Settings > Pages tab. Select GitHub Actions for the build and deployment source. Choose "Static HTML", click Configure. The YAML file for the GitHub Actions deployment is shown. Click the green Commit changes button; and commit to the main branch.
+
+Open the Actions tab. There should be a workflow run for our commit "Create static.yml" Click on the link for the workflow run "Create static.yml". There should be one card "deploy" for the job in our YAML script.
+
+Click the link on the "deploy" card to open the newly published web page.
+
+NB: since this was done in on the GitHub site, you will need to pull from GitHub to your local version to synchronize your work.
