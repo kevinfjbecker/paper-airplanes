@@ -7,6 +7,8 @@ Creative project in Three.js with 3D paper airplanes
 1. Create a GitHub repository
 2. Clone the repository
 3. Create the project with Node and Vite
+4. Create a placeholder web page
+5. Test Vite dev setup
 
 ### Create a GitHub repository
 
@@ -56,3 +58,29 @@ Update package.json. Change the license to MIT. Replace the scripts: test with d
   ...
 }
 ```
+
+### Create a placeholder web page
+
+Create a new ```index.html``` file. Tip: in VS Code type an exclamation point (!) and then tab-complete it.
+
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+The content of the file is less important than checking that Vite is ready to go. We are in the "hello world" stage of the project.
+
+### Test Vite dev setup
+
+From the teminal, start the development server: ```npm run dev```. Once the server is started, enter 'o' to open the browser. An new browser tab should open with a blank page.
+
+In ```index.html```, add some text (e.g., Hi.) to the body and save. The text should appear on the web page.
