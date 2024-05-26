@@ -6,6 +6,7 @@ Creative project in Three.js with 3D paper airplanes
 
 1. Create a GitHub repository
 2. Clone the repository
+3. Create the project with Node and Vite
 
 ### Create a GitHub repository
 
@@ -26,3 +27,32 @@ I use the MIT license. It was recommended in a previous workplace. The company r
 Open GitHub Desktop and clone the repository. That is, make a copy on your computer.
 
 GitHub Desktop makes simple repository management intuitive.
+
+### Create the project with Node and Vite
+
+Open the terminal and navite to the project folder. Initialize the project by running
+
+``` Terminal
+npm init -y
+```
+
+Install Vite by running
+
+``` Terminal
+npm install vite
+```
+
+Update package.json. Change the license to MIT. Replace the scripts: test with dev and build.
+
+``` JSON
+{
+  ...
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  ...
+  "license": "MIT",
+  ...
+}
+```
