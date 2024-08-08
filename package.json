@@ -2,7 +2,7 @@
   "name": "paper-airplanes",
   "version": "1.0.0",
   "description": "Creative project in Three.js with 3D paper airplanes",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
@@ -18,8 +18,11 @@
     "url": "https://github.com/kevinfjbecker/paper-airplanes/issues"
   },
   "homepage": "https://github.com/kevinfjbecker/paper-airplanes#readme",
+  "devDependencies": {
+    "vite": "^5.3.3",
+    "vite-plugin-restart": "^0.4.1"
+  },
   "dependencies": {
-    "three": "^0.167.1",
-    "vite": "^5.2.11"
+    "three": "^0.166.1"
   }
 }
