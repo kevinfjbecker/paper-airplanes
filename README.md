@@ -114,3 +114,19 @@ Update ```index.html```.
 </body>
 </html>
 ```
+
+### Add the Three.js dependency
+
+From the terminal install three.js
+
+``` Terminal
+npm install three
+```
+
+Check that Three.js in available. Replace the code in ```script.js``` with the following.
+
+``` JavaScript
+import * as THREE from 'three'
+
+document.body.innerText = `THREE.REVISION: ${THREE.REVISION}`
+```

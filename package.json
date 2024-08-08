@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kevinfjbecker/paper-airplanes#readme",
   "dependencies": {
+    "three": "^0.167.1",
     "vite": "^5.2.11"
   }
 }
