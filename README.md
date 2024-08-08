@@ -11,6 +11,8 @@ Creative project in Three.js with 3D paper airplanes
 5. Test Vite dev setup
 6. Setup GitHub Pages
 7. Add JavaScript
+8. Add the Three.js dependency
+9. Add build steps for GitHub Pages
 
 ### Create a GitHub repository
 
@@ -130,3 +132,35 @@ import * as THREE from 'three'
 
 document.body.innerText = `THREE.REVISION: ${THREE.REVISION}`
 ```
+
+### Add build steps for GitHub Pages
+
+The last deployment won't have quite worked. The initial page text will not have been changed to show the THREE.REVISION
+
+Update ```static.yml``` to include Install and Build steps. Also change the path to ```dist```.
+
+``` YAML
+...
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+The Install step uses ```npm ci``` "clean install".
+
+> This command is similar to npm install, except it's meant to be used in automated environments such as test platforms, continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.
+
+npm Docs - <https://docs.npmjs.com/cli/v10/commands/npm-ci>
