@@ -9,6 +9,8 @@ Creative project in Three.js with 3D paper airplanes
 3. Create the project with Node and Vite
 4. Create a placeholder web page
 5. Test Vite dev setup
+6. Setup GitHub Pages
+7. Add JavaScript
 
 ### Create a GitHub repository
 
@@ -94,3 +96,21 @@ Open the Actions tab. There should be a workflow run for our commit "Create stat
 Click the link on the "deploy" card to open the newly published web page.
 
 NB: since this was done in on the GitHub site, you will need to pull from GitHub to your local version to synchronize your work.
+
+### Add JavaScript
+
+Add a ```script.js``` to the project.
+
+``` JavaScript
+document.body.innerText = 'Scripting.'
+```
+
+Update ```index.html```.
+
+``` HTML
+...
+    Hi.
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+```
