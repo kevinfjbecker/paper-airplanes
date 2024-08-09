@@ -12,7 +12,8 @@ Creative project in Three.js with 3D paper airplanes
 6. Setup GitHub Pages
 7. Add JavaScript
 8. Add the Three.js dependency
-9. Add build steps for GitHub Pages
+9. Add vite.config.js
+10. Add build steps for GitHub Pages
 
 ### Create a GitHub repository
 
@@ -131,6 +132,47 @@ Check that Three.js in available. Replace the code in ```script.js``` with the f
 import * as THREE from 'three'
 
 document.body.innerText = `THREE.REVISION: ${THREE.REVISION}`
+```
+
+### NB: Your GitHub Pages page will not be working as expected. We will need to go through the next two steps
+
+You will need to tell Vite that the base of your site is "./" right here, rather than "/" your base domain. This is necessary to have the CSS and script links point to where your files are deployed.
+
+GitHub also needs to know to build the application. And to install the library dependencies needed to build the application.
+
+### Add vite.config.js
+
+To get the GitHub Pages to work correctly the project need a vite.config.js with base defined as ```base: './'```. This makes the links to assets relative to the site for the repository, rather than your homepage (YOUR_USERNAME.github.io).
+
+Add ```vite-plugin-restart``` as a development dependency
+
+``` Terminal
+npm install -d vite-plugin-restart
+```
+
+``` JavaScript
+import restart from 'vite-plugin-restart'
+
+export default {
+    root: 'src/', // Sources files (typically where index.html is)
+    publicDir: '../static/', // Path from "root" to static assets (files that are served as they are)
+    base: './',
+    server:
+    {
+        host: true, // Open to local network and display URL
+        open: !('SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env) // Open if it's not a CodeSandbox
+    },
+    build:
+    {
+        outDir: '../dist', // Output in the dist/ folder
+        emptyOutDir: true, // Empty the folder first
+        sourcemap: true // Add sourcemap
+    },
+    plugins:
+    [
+        restart({ restart: [ '../static/**', ] }) // Restart server on static file change
+    ],
+}
 ```
 
 ### Add build steps for GitHub Pages
