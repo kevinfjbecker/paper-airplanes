@@ -82,7 +82,7 @@ Create a new ```index.html``` file. Tip: in VS Code type an exclamation point (!
 </html>
 ```
 
-The content of the file is less important than checking that Vite is ready to go. We are in the "hello world" stage of the project.
+The content of the file is less important than checking that Vite is ready to go. You are in the "hello world" stage of the project.
 
 ### Test Vite dev setup
 
@@ -134,7 +134,7 @@ import * as THREE from 'three'
 document.body.innerText = `THREE.REVISION: ${THREE.REVISION}`
 ```
 
-### NB: Your GitHub Pages page will not be working as expected. We will need to go through the next two steps
+### NB: Your GitHub Pages page will not be working as expected. You will need to go through the next two steps
 
 You will need to tell Vite that the base of your site is "./" right here, rather than "/" your base domain. This is necessary to have the CSS and script links point to where your files are deployed.
 
