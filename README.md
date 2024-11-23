@@ -4,16 +4,16 @@ Creative project in Three.js with 3D paper airplanes
 
 ## Making this project from scratch
 
-1. Create a GitHub repository
-2. Clone the repository
-3. Create the project with Node and Vite
-4. Create a placeholder web page
-5. Test Vite dev setup
-6. Setup GitHub Pages
-7. Add JavaScript
-8. Add the Three.js dependency
-9. Add vite.config.js
-10. Add build steps for GitHub Pages
+1. [Create a GitHub repository](#create-a-github-repository)
+2. [Clone the repository](#clone-the-repository)
+3. [Create the project with Node and Vite](#create-the-project-with-node-and-vite)
+4. [Create a placeholder web page](#create-a-placeholder-web-page)
+5. [Test Vite dev setup](#test-vite-dev-setup)
+6. [Setup GitHub Pages](#setup-github-pages)
+7. [Add JavaScript](#add-javascript)
+8. [Add the Three.js dependency](#add-the-threejs-dependency)
+9. [Add vite.config.js](#add-viteconfigjs)
+10. [Add build steps for GitHub Pages](#add-build-steps-for-github-pages)
 
 ### Create a GitHub repository
 
@@ -37,7 +37,7 @@ GitHub Desktop makes simple repository management intuitive.
 
 ### Create the project with Node and Vite
 
-Open the terminal and navite to the project folder. Initialize the project by running
+Open the terminal and navigate to the project folder. Initialize the project by running
 
 ``` Terminal
 npm init -y
@@ -82,23 +82,23 @@ Create a new ```index.html``` file. Tip: in VS Code type an exclamation point (!
 </html>
 ```
 
-The content of the file is less important than checking that Vite is ready to go. You are in the "hello world" stage of the project.
+The content of the file is less important than checking that Vite is ready to go. You are in the "Hello World" stage of the project.
 
 ### Test Vite dev setup
 
-From the teminal, start the development server: ```npm run dev```. Once the server is started, enter 'o' to open the browser. An new browser tab should open with a blank page.
+From the terminal, start the development server: ```npm run dev```. Once the server is started, enter 'o' to open the browser. A new browser tab should open with a blank page.
 
 In ```index.html```, add some text (e.g., Hi.) to the body and save. The text should appear on the web page.
 
 ### Setup GitHub Pages
 
-From the repository page on github.com, open the Settings > Pages tab. Select GitHub Actions for the build and deployment source. Choose "Static HTML", click Configure. The YAML file for the GitHub Actions deployment is shown. Click the green Commit changes button; and commit to the main branch.
+From the repository page on github.com, open the Settings > Pages tab. Select GitHub Actions for the build and deployment source. Choose "Static HTML", click Configure. The YAML file for the GitHub Actions deployment is shown. Click the green Commit changes button and commit to the main branch.
 
-Open the Actions tab. There should be a workflow run for our commit "Create static.yml" Click on the link for the workflow run "Create static.yml". There should be one card "deploy" for the job in our YAML script.
+Open the Actions tab. There should be a workflow run for our commit "Create static.yml." Click on the link for the workflow run "Create static.yml". There should be one card, "deploy", for the job in our YAML script.
 
 Click the link on the "deploy" card to open the newly published web page.
 
-NB: since this was done in on the GitHub site, you will need to pull from GitHub to your local version to synchronize your work.
+NB: Since this was done in on the GitHub site, you will need to pull from GitHub to your local version to synchronize your work.
 
 ### Add JavaScript
 
@@ -142,9 +142,9 @@ GitHub also needs to know to build the application. And to install the library d
 
 ### Add vite.config.js
 
-To get the GitHub Pages to work correctly the project need a vite.config.js with base defined as ```base: './'```. This makes the links to assets relative to the site for the repository, rather than your homepage (YOUR_USERNAME.github.io).
+To get the GitHub Pages to work correctly the project needs a vite.config.js with base defined as ```base: './'```. This makes the links to assets relative to the site for the repository, rather than your homepage (YOUR_USERNAME.github.io).
 
-Add ```vite-plugin-restart``` as a development dependency
+Add ```vite-plugin-restart``` as a development dependency.
 
 ``` Terminal
 npm install -d vite-plugin-restart
@@ -177,7 +177,7 @@ export default {
 
 ### Add build steps for GitHub Pages
 
-The last deployment won't have quite worked. The initial page text will not have been changed to show the THREE.REVISION
+The last deployment won't have worked. The initial page text will not have been changed to show the THREE.REVISION
 
 Update ```static.yml``` to include Install and Build steps. Also change the path to ```dist```.
 
@@ -206,3 +206,17 @@ The Install step uses ```npm ci``` "clean install".
 > This command is similar to npm install, except it's meant to be used in automated environments such as test platforms, continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.
 
 npm Docs - <https://docs.npmjs.com/cli/v10/commands/npm-ci>
+
+## Wrap-up
+
+At this point you have a blank slate. But a slate with good supports:
+
+* a remote git repository (GitHub)
+* a build tool (Vite)
+* a local web server _with live reload_ (Vite)
+* a published web page (GitHub Pages)
+* and automatic deployment! (GitHub Actions)
+
+## Thanks
+
+Alot of this content is based on Bruno Simon's free lesson [First Three.js Project](https://threejs-journey.com/lessons/first-threejs-project). The lesson is part of his amazing course [Three.js Journey](https://threejs-journey.com/).
