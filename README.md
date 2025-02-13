@@ -146,6 +146,8 @@ To get the GitHub Pages to work correctly the project needs a vite.config.js wit
 
 Add ```vite-plugin-restart``` as a development dependency.
 
+Create a folder ```src``` and move your source files: ```index.html``` and ```script.js``` into the ```src``` folder.
+
 ``` Terminal
 npm install -d vite-plugin-restart
 ```
